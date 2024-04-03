@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChestModel 
 {
     public string Name { get; private set; }
     public Sprite Icon { get; private set; }
-    public int MinCoins { get; private set; }
-    public int MaxCoins { get; private set; }
-    public int MinGems { get; private set; }
-    public int MaxGems { get; private set; }
+    public int CoinsReward{ get; private set; }
+    public int GemsReward { get; private set; }
     public int UnlockCost { get; private set; }
     public float UnlockTime { get; private set; }
 
@@ -18,12 +14,9 @@ public class ChestModel
     {
         Name = Chest.Name;
         Icon = Chest.Icon;
-        MinCoins = Chest.MinCoins;
-        MaxCoins = Chest.MaxCoins;
-        MinGems = Chest.MinGems;
-        MaxGems = Chest.MaxGems;
+        CoinsReward = Random.Range(Chest.MinCoins, Chest.MaxCoins + 1);
+        GemsReward = Random.Range(Chest.MinGems, Chest.MaxGems + 1);
         UnlockTime = Chest.UnlockTime;
         UnlockCost = Chest.UnlockCost;
-        
     }
 }

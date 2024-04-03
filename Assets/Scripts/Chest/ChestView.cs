@@ -20,6 +20,19 @@ namespace Assets.Scripts.Chest
 
         [SerializeField] private Button chestButton;
 
+        private ChestState currentChestState;
+
+        public void SetControllerReference(ChestController chestController)
+        {
+            this.Controller = chestController;
+        }
+
+        private void Start()
+        {
+            
+        }
+
+
 
 
 
