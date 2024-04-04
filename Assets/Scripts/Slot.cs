@@ -18,6 +18,15 @@ namespace Assets.Scripts
             isEmpty = true;
         }
 
+        public void SpawnRandomChest(Chest_SO randomChestSO)
+        {
+            chestController = ChestService.Instance.GetChest(randomChestSO, chestView);
+            isEmpty = false;
+        }
 
+        public void SetSlotReference()
+        {
+            chestView.SlotReference = this;
+        }
     }
 }

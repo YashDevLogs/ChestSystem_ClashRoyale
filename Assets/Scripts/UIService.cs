@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Chest;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 namespace Assets.Scripts
 {
     public class UIService : GenericMonoSingleton<UIService>
-    { 
+    {
         [SerializeField]
         private TextMeshProUGUI Gems;
         [SerializeField]
@@ -34,6 +35,35 @@ namespace Assets.Scripts
             Coins.text = coins.ToString();
         }
 
+        public void ToggleSlotsFullPopup(bool setActive)
+        {
+            slotsFullPanel.SetActive(setActive);
+        }
+
+        public void ToggleIsBusyUnlockingPopup(bool setActive)
+        {
+            busyUnlockingPanel.SetActive(setActive);
+        }
+
+        public void ToggleUnlockChestPopup(bool setActive)
+        {
+            unlockChestPanel.SetActive(setActive);
+            if (setActive == false)
+            {
+                // Debug.Log("selected controller reference got deleted.");
+                ChestService.Instance.selectedController = null;
+            }
+        }
+
+        public void ToggleInsufficientResourcesPopup(bool setActive)
+        {
+            notEnoughResourcesPanel.SetActive(setActive);
+        }
+
+        public void ClosePanel()
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
 
     }
 }
