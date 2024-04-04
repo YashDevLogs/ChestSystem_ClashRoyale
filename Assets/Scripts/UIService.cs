@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Chest;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,7 +63,7 @@ namespace Assets.Scripts
 
         public void ClosePanel()
         {
-            gameObject.transform.parent.gameObject.SetActive(false);
+            
         }
 
     }
