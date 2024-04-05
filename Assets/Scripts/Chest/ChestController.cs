@@ -33,7 +33,8 @@ namespace Assets.Scripts.Chest
         {
             while (UnlockTimer > 0)
             {
-                chestView.ChestTimerText.text = UnlockTimer.ToString() + " M";
+                Debug.Log("Timer started ");
+                chestView.ChestTimerText.text = UnlockTimer.ToString() + " S";
                 yield return new WaitForSeconds(1f);
                 UnlockTimer -= 1;
             }

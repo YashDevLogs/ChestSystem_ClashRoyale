@@ -51,7 +51,6 @@ namespace Assets.Scripts
             unlockChestPanel.SetActive(setActive);
             if (setActive == false)
             {
-                // Debug.Log("selected controller reference got deleted.");
                 ChestService.Instance.selectedController = null;
             }
         }

@@ -97,8 +97,7 @@ namespace Assets.Scripts.Chest
         {
             slotController.IsUnlocking = true;
             InitialiseViewUIForUnlockingChest();
-            ChestController.StartTimer();
-
+            StartCoroutine(ChestController.StartTimer()); 
         }
 
         public void OpenInstantly()
